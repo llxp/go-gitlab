@@ -176,6 +176,7 @@ type Client struct {
 	MemberRolesService           *MemberRolesService
 	MergeRequestApprovals        *MergeRequestApprovalsService
 	MergeRequests                *MergeRequestsService
+	MergeRequestDependencies     *MergeRequestDependenciesService
 	MergeTrains                  *MergeTrainsService
 	Metadata                     *MetadataService
 	Milestones                   *MilestonesService
@@ -416,6 +417,7 @@ func newClient(options ...ClientOptionFunc) (*Client, error) {
 	c.MemberRolesService = &MemberRolesService{client: c}
 	c.MergeRequestApprovals = &MergeRequestApprovalsService{client: c}
 	c.MergeRequests = &MergeRequestsService{client: c, timeStats: timeStats}
+	c.MergeRequestDependencies = &MergeRequestDependenciesService{client: c}
 	c.MergeTrains = &MergeTrainsService{client: c}
 	c.Metadata = &MetadataService{client: c}
 	c.Milestones = &MilestonesService{client: c}
